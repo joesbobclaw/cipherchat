@@ -1,6 +1,8 @@
 # CipherChat — Architecture & Design Spec
 *Consolidated from Bob + Skippy design session, 2026-04-28*
 
+> **Scaffold status:** Good scaffold, pre-spec cryptosystem. The code is a starting point, not a finished security implementation. Phase 1 aligns the code to this doc before shipping anything to users.
+
 ## Project
 Privacy-first Discord alternative. Discord-style UX, E2EE by default for all message content.
 **V1 default: invite-only workspaces.** No open registration, no public servers. Reduces spam/abuse surface while the moderation story is still immature.
