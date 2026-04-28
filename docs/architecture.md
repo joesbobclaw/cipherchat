@@ -179,12 +179,18 @@ cipherchat/
 - Attachment storage compromise
 
 **Still exposed / partially exposed:**
-- Social graph (who talks to whom)
-- Room membership metadata
-- Timestamps
-- Presence patterns
-- Attachment sizes
-- Abuse-reporting tension with E2EE (mitigated by client-side re-encryption flow)
+- Social graph — who talks to whom
+- Membership graph — which users are in which workspaces/channels
+- Timing metadata — when messages are sent, activity bursts, read/delivery timing
+- Presence metadata — online state, typing indicators unless explicitly hidden/blurred
+- Attachment metadata — size, count, upload/download timing, MIME hints unless padded
+- Abuse/report metadata — who reported whom, and when
+- Device/account metadata — device additions, revocations, recovery events
+- Network metadata — IP addresses unless proxying/relays added
+- Access-pattern leakage — what gets fetched and when
+
+> Content secrecy is tractable. Metadata secrecy is where the gods demand sacrifices.
+> Be explicit with users: this system protects what you *say*, not the fact that you said it, to whom, or when.
 
 **Sender Keys compromise window (explicit):**
 If a member's device key is compromised, an attacker with stored ciphertext can decrypt past messages from that sender in the same key epoch. This is a known forward secrecy gap in the Sender Keys model. Mitigations: aggressive key rotation on membership changes, short key epochs where practical. Full post-compromise security requires MLS (V2). This limitation must be documented in user-facing security docs, not buried in footnotes.
