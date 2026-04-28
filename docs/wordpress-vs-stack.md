@@ -49,6 +49,7 @@ Everything product-defining for an encrypted messenger:
 
 > **If privacy is the main thing, WordPress is not the engine.**
 > **If data utility is the main thing, CipherChat's E2EE model works against that on purpose.**
+> Don't ask one system to promise both "the server can't read this" and "the server can later mine this." Those are not friends.
 
 If you want both: build CipherChat for private conversation; keep WordPress as the place where intentionally-public or intentionally-shareable knowledge gets published, summarized, indexed, and reused.
 
