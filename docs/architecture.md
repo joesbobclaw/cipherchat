@@ -3,6 +3,7 @@
 
 ## Project
 Privacy-first Discord alternative. Discord-style UX, E2EE by default for all message content.
+**V1 default: invite-only workspaces.** No open registration, no public servers. Reduces spam/abuse surface while the moderation story is still immature.
 
 ## Non-negotiables
 - Multi-device model from day one
