@@ -179,6 +179,7 @@ cipherchat/
 
 > A real MVP, not a hallucinated empire.
 > Code can be regenerated. Protocol mistakes become archaeology.
+> The goal is convergence, not architecture confetti.
 
 ## Official Roadmap
 
