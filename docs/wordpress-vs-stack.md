@@ -66,6 +66,7 @@ Joe's use cases are partially in conflict:
 - All the hard security work
 
 > **WordPress gives you the lobby, not the vault, the radio system, or the blast doors.**
+> If chat is a feature, WordPress helps. If encrypted chat is the product, WordPress is mostly furniture.
 
 The vault is the same amount of work regardless of what you put in front of it. The CipherChat scaffold + spec is already built. Phase 1 starts whenever Joe says go.
 
