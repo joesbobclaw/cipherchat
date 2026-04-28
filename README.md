@@ -1,6 +1,6 @@
 # CipherChat
 
-> ⚠️ **Spec is Phase-0 complete. Code is scaffold-complete, crypto-incomplete.** This is Phase 0 infrastructure. The spec in `docs/architecture.md` is the source of truth. The code does not yet match the spec. Phase 1 brings the code up to the spec — especially the crypto and device model.
+> ⚠️ **Good app skeleton, wrong security core.** Spec is Phase-0 complete (`docs/architecture.md`). Crypto/auth/schema need rebuilding to match it before this is a real secure messenger. This is Phase 0 infrastructure. The spec in `docs/architecture.md` is the source of truth. The code does not yet match the spec. Phase 1 brings the code up to the spec — especially the crypto and device model.
 
 A privacy-first Discord alternative. E2EE by default for all message content. Content private, metadata reduced where practical, not magically eliminated.
 
