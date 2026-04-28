@@ -127,7 +127,10 @@ cipherchat/
 - Local-only search over decrypted content
 - Basic presence (opt-in, coarse-grained)
 - QR device linking
-- Safety-number style device verification UI
+- **Device fingerprint display** (your own devices + contacts' devices)
+- **User/profile key fingerprint display** (visible on every profile)
+- **"New device added" visibility** (alert when a contact's device list changes)
+- Safety-number style verification (V1: fingerprint display; V2: QR/safety-number ceremony)
 - Recovery phrase / encrypted key backup (optional)
 - Clear "🔒 end-to-end encrypted" UI indicators
 - Honest metadata disclosure in onboarding
@@ -172,6 +175,15 @@ cipherchat/
 ---
 
 ## Threat Model (summary)
+
+### Joe-facing summary
+- **Metadata exposure:** who talks to whom, when, and how often
+- **Membership exposure:** which users are in which spaces/channels
+- **Traffic analysis:** activity bursts and fetch patterns
+- **Key-distribution trust:** mitigated in V1 with fingerprint display; improved in V2 with QR/safety-number verification
+- **Device compromise:** out of scope — owned client means owned plaintext
+
+### Full model
 **Protects against:**
 - Server compromise
 - Operator access to stored chat data
