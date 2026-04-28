@@ -2,8 +2,8 @@
 *Skippy paranoid pass, 2026-04-28*
 
 ## Verdict
-**Good scaffold. Pre-spec cryptosystem.**
-This is fine — as long as nobody ships it as a finished security product.
+**Production-inappropriate crypto, production-useful scaffold.**
+This is a respectable place to land for a first pass. Do not ship the crypto. Do use the scaffold.
 
 ---
 
