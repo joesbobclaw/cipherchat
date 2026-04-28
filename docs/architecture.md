@@ -257,7 +257,7 @@ If a member's device key is compromised, an attacker with stored ciphertext can 
 ---
 
 ## Security Notes
-- **IndexedDB is storage, not a secure enclave.** Web Crypto protects operations, not a compromised runtime. Once the app decrypts content in the browser, the browser environment IS the trust boundary. XSS or a malicious extension can expose plaintext, steal unlocked key material, or tamper with key verification UI.
+- **E2EE in a browser is only as trustworthy as the runtime delivering the decrypted plaintext.** IndexedDB is storage, not a secure enclave. Web Crypto protects operations, not a compromised runtime. XSS or a malicious extension can expose plaintext, steal unlocked key material, or tamper with key verification UI.
 - Mitigations: strict CSP, Subresource Integrity on all assets, zero third-party scripts in crypto path
 - Native app (Electron/React Native) eliminates XSS attack surface — reason to prioritize mobile V2
 - **PBKDF2 vs Argon2id tradeoff for Joe:** Argon2id is the stronger password-hardening choice but browser delivery means WASM + more bundle/supply-chain surface. PBKDF2 via native Web Crypto is weaker but simpler, more auditable, and operationally cleaner for a browser-first MVP. Decision: start with PBKDF2 at 600k+ iterations, migrate to Argon2id when native clients ship.
