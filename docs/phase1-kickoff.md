@@ -73,6 +73,9 @@ This is a respectable place to land for a first pass. Do not ship the crypto. Do
 
 > **Not just crypto code drift — contracts, schema, auth, presence, and key lifecycle are all still pre-spec. Phase 1 is a real alignment pass, not a light patch.**
 
+> Surface bugs are easy. The structural lies are the ones that bite later.
+> Fix the structure first: repo shape → schema → crypto interface → crypto impl → auth flow.
+
 ---
 
 ## What Phase 1 Does NOT Touch
