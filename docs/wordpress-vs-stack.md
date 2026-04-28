@@ -91,6 +91,29 @@ The vault is the same amount of work regardless of what you put in front of it. 
 
 ---
 
+## Decision Framework for Joe's Threat Model
+
+**Your stated threats:**
+1. Don't want Discord/hosted provider reading chats
+2. Don't want a breach leaking chat history
+
+**Option ranking:**
+
+| Option | Solves #1 | Solves #2 | Timeline |
+|--------|-----------|-----------|----------|
+| Matrix/Element (self-hosted) | ✅ | ✅ | Days |
+| CipherChat (Phase 1+) | ✅ | ✅ | Months |
+| WordPress + HTTPS | ✅ | ❌ | Days |
+
+**Blunt recommendation:**
+- Want something real **soon** → stand up Matrix/Element now
+- Want something custom **later** → keep developing CipherChat
+- WordPress + HTTPS solves only half your stated concern
+
+> HTTPS is necessary but nowhere near sufficient for the threat you actually care about.
+
+---
+
 ## Alternative: Skip the custom build entirely
 
 If the goal is "get off Discord fast with E2EE," **self-hosted Matrix/Element** is worth considering:
