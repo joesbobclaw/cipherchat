@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String          @id @default(cuid())
+  username            String          @unique
+  publicKey           String
+  encryptedPrivateKey String
+  salt                String
+  passwordHash        String
+  createdAt           DateTime        @default(now())
+  memberships         ServerMember[]
+  sentMessages        Message[]
+  dmsSent             DirectMessage[] @relation("sender")
+  dmsReceived         DirectMessage[] @relation("recipient")
+}
+
+model Server {
+  id        String         @id @default(cuid())
+  name      String
+  ownerId   String
+  createdAt DateTime       @default(now())
+  members   ServerMember[]
+  channels  Channel[]
+}
+
+model ServerMember {
+  id            String @id @default(cuid())
+  userId        String
+  serverId      String
+  role          String @default("member")
+  encryptedKeys String @default("{}")
+  user          User   @relation(fields: [userId], references: [id])
+  server        Server @relation(fields: [serverId], references: [id])
+
+  @@unique([userId, serverId])
+}
+
+model Channel {
+  id        String    @id @default(cuid())
+  name      String
+  serverId  String
+  type      String    @default("text")
+  createdAt DateTime  @default(now())
+  server    Server    @relation(fields: [serverId], references: [id])
+  messages  Message[]
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  ciphertext String
+  nonce      String
+  channelId  String
+  senderId   String
+  createdAt  DateTime @default(now())
+  channel    Channel  @relation(fields: [channelId], references: [id])
+  sender     User     @relation(fields: [senderId], references: [id])
+}
+
+model DirectMessage {
+  id          String   @id @default(cuid())
+  ciphertext  String
+  nonce       String
+  senderId    String
+  recipientId String
+  createdAt   DateTime @default(now())
+  sender      User     @relation("sender", fields: [senderId], references: [id])
+  recipient   User     @relation("recipient", fields: [recipientId], references: [id])
+}
