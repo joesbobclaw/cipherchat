@@ -59,6 +59,16 @@ This is a respectable place to land for a first pass. Do not ship the crypto. Do
 8. **Replace auth flow** — signed challenge → JWT, not password-hash-first
 9. **Bump PBKDF2 to 600k+ iterations** (or Argon2id via WASM when native clients ship)
 
+## Additional Drift (Skippy second pass)
+
+| Issue | Detail |
+|-------|--------|
+| Encrypted private key server-stored | `auth.ts` returns `encryptedPrivateKey` + `salt` on `User`. Spec wants device-local custody first; recovery as explicit separate flow. |
+| JWT expiry too loose | 30-day bearer token. Should be much shorter even before challenge auth lands. |
+| Type system is `User.publicKey`-centric | `packages/shared/src/types.ts` assumes one key per user, not per device. Shared contracts are also pre-spec. |
+| Presence model too revealing | WS type is `online: boolean` — pushes toward fine-grained presence instead of opt-in coarse-grained. |
+| No versioned key state for channels | `encryptedKeys` is one mutable blob — no key epoch, rotation versioning, or membership change tracking. |
+
 ---
 
 ## What Phase 1 Does NOT Touch
