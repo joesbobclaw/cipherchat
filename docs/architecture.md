@@ -127,7 +127,7 @@ cipherchat/
 - Invite-only workspaces
 - Text channels
 - DMs (X3DH + Double Ratchet)
-- Small encrypted group chats/channels with Sender Keys (hard cap: 100 members)
+- Small encrypted group chats/channels with Sender Keys (**hard cap: 100 members; preferred default: 50**)
 - Per-device identity keys
 - Pairwise DM session bootstrap with prekey bundles
 - Client-side encrypted attachments
@@ -170,19 +170,35 @@ cipherchat/
 
 > A real MVP, not a hallucinated empire.
 
-## V2
-- Mobile (React Native / Expo) using packages/client-sdk
-- Push notifications
-- MLS migration for larger/dynamic channels
-- SFrame over SFU for voice/video E2EE
-- Better moderation flows
-- Recovery UX improvements
+## Official Roadmap
 
-## V3
-- Federation
-- Advanced moderation tooling
-- Large public community support
-- Bots/apps marketplace
+**Phase 0** ✅ — docs, threat model, architecture, protocol boundaries
+
+**Phase 1** — working MVP for encrypted text collaboration
+- Auth + per-device keys + prekey bundles
+- DMs (X3DH + Double Ratchet)
+- Group channels (Sender Keys, hard cap 50–100)
+- Encrypted attachments
+- WebSocket delivery
+- Fingerprint display + device trust states
+- Invite-only workspaces + basic roles
+- Local search
+
+**Phase 2** — operational polish
+- Recovery UX hardening
+- Moderation/abuse reporting flows
+- Reactions + threads
+- Multi-device hardening + QR device linking
+- Push notifications
+- Mobile clients (React Native / Expo)
+
+**Phase 3** — scale + interop
+- MLS migration path for larger/dynamic channels
+- Voice/video with SFrame over SFU
+- Improved verification UX (full QR/safety-number ceremony)
+- Key transparency / auditable key directory
+- Self-hosted one-click install
+- Selective federation/interoperability — only if it still looks worth the pain
 
 ---
 
