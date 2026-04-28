@@ -124,31 +124,35 @@ cipherchat/
 ---
 
 ## V1 Scope (Ship)
-- User registration + per-device keys
-- Signed login challenge → JWT session
+- Invite-only workspaces
+- Text channels
 - DMs (X3DH + Double Ratchet)
-- Small encrypted group channels with Sender Keys (hard cap: 100 members)
-- Encrypted attachments
-- Invites + roles
+- Small encrypted group chats/channels with Sender Keys (hard cap: 100 members)
+- Per-device identity keys
+- Pairwise DM session bootstrap with prekey bundles
+- Client-side encrypted attachments
 - WebSocket real-time delivery
 - Local-only search over decrypted content
-- Basic presence (opt-in, coarse-grained)
-- QR device linking
+- Basic roles/permissions
 - **Device fingerprint display** (your own devices + contacts' devices)
 - **User/profile key fingerprint display** (visible on every profile)
 - **"New device added" visibility** (alert when a contact's device list changes)
-- Safety-number style verification (V1: fingerprint display; V2: QR/safety-number ceremony)
-- Recovery phrase / encrypted key backup (optional)
+- QR device linking
+- Device trust states: trusted / known / unknown
+- Honest onboarding copy about metadata exposure and recovery limits
+- Recovery phrase / encrypted key backup (basic)
+- Docker/dev setup
 - Clear "🔒 end-to-end encrypted" UI indicators
-- Honest metadata disclosure in onboarding
 
 ## V1 Hard No
-- Large public servers
 - Voice/video
-- Bots/marketplace
+- Large public communities
+- Bots / app platform
+- Federation / Matrix compatibility
+- Perfect metadata hiding
+- Server-side content search
+- Polished recovery beyond recovery phrase basics
 - Message history sharing with newly added members
-- Rich moderation over encrypted content
-- Federation
 
 ## V2
 - Mobile (React Native / Expo) using packages/client-sdk
