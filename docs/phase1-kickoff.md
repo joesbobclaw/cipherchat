@@ -68,6 +68,10 @@ This is a respectable place to land for a first pass. Do not ship the crypto. Do
 | Type system is `User.publicKey`-centric | `packages/shared/src/types.ts` assumes one key per user, not per device. Shared contracts are also pre-spec. |
 | Presence model too revealing | WS type is `online: boolean` — pushes toward fine-grained presence instead of opt-in coarse-grained. |
 | No versioned key state for channels | `encryptedKeys` is one mutable blob — no key epoch, rotation versioning, or membership change tracking. |
+| No attachment protocol surface | No `Attachment`, no `AttachmentKeyRef`, no contracts for encrypted file-key distribution. |
+| No device trust/verification surface | No contracts or schema shape for trusted/known/unknown states, fingerprint verification, or "new device added" signaling. |
+
+> **Not just crypto code drift — contracts, schema, auth, presence, and key lifecycle are all still pre-spec. Phase 1 is a real alignment pass, not a light patch.**
 
 ---
 
