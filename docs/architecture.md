@@ -251,7 +251,9 @@ cipherchat/
 > Be explicit with users: this system protects what you *say*, not the fact that you said it, to whom, or when.
 
 **Sender Keys compromise window (explicit):**
-If a member's device key is compromised, an attacker with stored ciphertext can decrypt past messages from that sender in the same key epoch. This is a known forward secrecy gap in the Sender Keys model. Mitigations: aggressive key rotation on membership changes, short key epochs where practical. Full post-compromise security requires MLS (V2). This limitation must be documented in user-facing security docs, not buried in footnotes.
+> **Sender Keys trade forward secrecy and post-compromise security for implementation simplicity and group scalability in V1. If a member device is compromised, stored ciphertext from that sender may be decryptable beyond the ideal security window. CipherChat accepts this tradeoff for small-group MVP channels and plans MLS for stronger group security in a later phase.**
+
+Mitigations: aggressive key rotation on membership changes, hard group size cap enforced. Full post-compromise security requires MLS (V2). This limitation must be in user-facing security docs, not buried in footnotes.
 
 **Out of scope:**
 - Device compromise (if your device is owned, all bets are off)
