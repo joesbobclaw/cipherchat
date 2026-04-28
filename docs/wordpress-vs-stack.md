@@ -37,6 +37,23 @@ Everything product-defining for an encrypted messenger:
 
 ---
 
+## You Have Two Product Ideas, Not One (Skippy)
+
+**Option A — CipherChat**
+- Goal: nobody but participants can read message content; self-hosted; portable; server-blind to transcripts
+- Tradeoff: latent space over message content is mostly gone server-side; future AI/search/analytics over content must be client-side, opt-in, or explicitly re-encrypted/shared
+
+**Option B — WordPress-native community system**
+- Goal: portable, self-hosted, flexible, searchable, mineable; easier integration with publishing/community/admin workflows
+- Tradeoff: server can read transcripts; privacy promise is much weaker; not the same thing as an encrypted Discord alternative
+
+> **If privacy is the main thing, WordPress is not the engine.**
+> **If data utility is the main thing, CipherChat's E2EE model works against that on purpose.**
+
+If you want both: build CipherChat for private conversation; keep WordPress as the place where intentionally-public or intentionally-shareable knowledge gets published, summarized, indexed, and reused.
+
+---
+
 ## The E2EE / Latent Space Tension
 
 Joe's use cases are partially in conflict:
