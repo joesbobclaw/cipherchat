@@ -186,6 +186,9 @@ cipherchat/
 - Attachment sizes
 - Abuse-reporting tension with E2EE (mitigated by client-side re-encryption flow)
 
+**Sender Keys compromise window (explicit):**
+If a member's device key is compromised, an attacker with stored ciphertext can decrypt past messages from that sender in the same key epoch. This is a known forward secrecy gap in the Sender Keys model. Mitigations: aggressive key rotation on membership changes, short key epochs where practical. Full post-compromise security requires MLS (V2). This limitation must be documented in user-facing security docs, not buried in footnotes.
+
 **Out of scope:**
 - Device compromise (if your device is owned, all bets are off)
 - Traffic analysis / timing attacks (future problem)
