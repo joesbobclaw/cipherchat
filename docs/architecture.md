@@ -153,6 +153,22 @@ cipherchat/
 - Server-side content search
 - Polished recovery beyond recovery phrase basics
 - Message history sharing with newly added members
+- Advanced moderation tooling over encrypted content
+- Hard-block verification workflows
+
+## Important V1 Constraints
+- Keep encrypted groups/channels **small** — hard cap enforced, not aspirational
+- **Rotate channel/group keys on every membership change** — no exceptions
+- Abuse reporting = **client-side voluntary re-encryption** to moderation key, explicit user consent
+- Store **ciphertext envelopes**, never plaintext messages
+- Server is **content-blind, not metadata-blind** — say this plainly everywhere
+
+## UX Truths (must be stated plainly in product)
+- **Lose your recovery phrase = lose old encrypted history on a new device.** No support escape hatch.
+- **Unverified devices are visible and nudged, not silently trusted.** Nudge, don't hard-block.
+- **This product protects message content more than metadata.** Don't oversell it.
+
+> A real MVP, not a hallucinated empire.
 
 ## V2
 - Mobile (React Native / Expo) using packages/client-sdk
