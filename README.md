@@ -17,7 +17,7 @@ A privacy-first Discord alternative. E2EE by default for all message content. Co
 ## Monorepo Structure
 
 ```
-nexus-chat/
+cipherchat/
   packages/
     shared/    # Crypto utilities + TypeScript types
     server/    # Fastify API + WebSocket server
