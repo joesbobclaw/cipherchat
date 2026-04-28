@@ -169,6 +169,7 @@ cipherchat/
 - **This product protects message content more than metadata.** Don't oversell it.
 
 > A real MVP, not a hallucinated empire.
+> Code can be regenerated. Protocol mistakes become archaeology.
 
 ## Official Roadmap
 
