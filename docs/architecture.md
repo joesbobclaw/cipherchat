@@ -139,6 +139,7 @@ cipherchat/
 - **Device fingerprint display** (your own devices + contacts' devices)
 - **User/profile key fingerprint display** (visible on every profile)
 - **"New device added" visibility** (alert when a contact's device list changes)
+  > Without key inspection, users are trusting vibes with extra math. That's not a security product.
 - QR device linking
 - Device trust states: trusted / known / unknown
 - Honest onboarding copy about metadata exposure and recovery limits
