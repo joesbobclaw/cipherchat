@@ -45,6 +45,7 @@ cipherchat/
 - Server distributes prekey bundles; deletes one-time prekeys after use
 
 ### Group Channels — Sender Keys (V1)
+> ⚠️ Groups are where the dragons live. Membership changes, rekeying, role changes, history access, and multi-device fanout are the hard parts. The Sender Keys approach below is the smallest safe thing that ships. Do not relax the size cap or rotation rules without a plan.
 - Each channel has a symmetric Sender Key per member
 - **Key rotates on every membership change** (join or leave)
 - Small/medium groups only in V1 (hard cap: 100 members)
