@@ -87,13 +87,19 @@ cipherchat/
 ## Data Model
 
 ### Server stores
-- Accounts (username, public key bundle)
-- Devices (per-device public keys, prekey bundles)
+- Accounts (username, display name, created)
+- Devices
+  - device identity public key
+  - signed prekey (rotated periodically)
+  - one-time prekeys (consumed on session init, server deletes after use)
+  - prekey bundle metadata (created, consumed, rotated timestamps)
 - Workspace/channel membership
 - Encrypted message envelopes (ciphertext + nonce only)
 - Encrypted attachment references
 - Permissions, invites, roles
 - Delivery receipts / queue state
+
+> Prekey bundles are first-class server objects. Without them, async DM session setup (X3DH) requires both parties online simultaneously — the moon-alignment problem. Server holds bundles, distributes one-time prekeys on demand, and deletes consumed keys immediately.
 
 ### Client stores (IndexedDB)
 - Decrypted message cache
