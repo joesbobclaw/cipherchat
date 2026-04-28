@@ -95,7 +95,7 @@ cipherchat/
 - `Device` — per-device identity public key, trust state
 - `SignedPrekey` — rotated signed prekey per device
 - `OneTimePrekey` — consumed on session init, deleted after use
-- `Workspace` — invite-only by default in V1
+- `Server` — invite-only by default in V1 (called "workspace" in product copy; schema name is `Server` for Discord familiarity — frozen)
 - `Channel` — text channels within a workspace
 - `ChannelMember` — membership, encrypted sender key per member
 - `EncryptedMessageEnvelope` — ciphertext + nonce only, no plaintext
