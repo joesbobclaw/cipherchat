@@ -112,6 +112,10 @@ The vault is the same amount of work regardless of what you put in front of it. 
 
 > HTTPS is necessary but nowhere near sufficient for the threat you actually care about.
 
+**The least romantic and most useful answer:**
+> Deploy Matrix/Element now if you want protection soon.
+> Keep CipherChat as the custom future if you decide the off-the-shelf answer isn't enough.
+
 ---
 
 ## Alternative: Skip the custom build entirely
